@@ -1,16 +1,39 @@
+module.exports = {
+  siteName: 'AntD Admin',
+  copyright: 'Ant Design Admin  © 2018 zuiidea',
+  logoPath: '/logo.svg',
+  apiPrefix: '/api/v1',
+  fixedHeader: true, // sticky primary layout header
 
-// 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
-const config = {
-  'oauth_uri': 'https://github.com/login/oauth/authorize',
-  'redirect_uri': 'http://biaochenxuying.cn/login',
-  'client_id': '****',
-  'client_secret': '****',
-};
+  /* Layout configuration, specify which layout to use for route. */
+  layouts: [
+    {
+      name: 'primary',
+      include: [/.*/],
+      exclude: [/(\/(en|zh))*\/login/],
+    },
+  ],
 
-// 本地开发环境下 （参数可以直接用）
-if (process.env.NODE_ENV === 'development') {
-  config.redirect_uri = "http://localhost:3001/login"
-  config.client_id = "502176cec65773057a9e"
-  config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235"
+  /* I18n configuration, `languages` and `defaultLanguage` are required currently. */
+  i18n: {
+    /* Countrys flags: https://www.flaticon.com/packs/countrys-flags */
+    languages: [
+      {
+        key: 'pt-br',
+        title: 'Português',
+        flag: '/brazil.svg',
+      },
+      {
+        key: 'en',
+        title: 'English',
+        flag: '/america.svg',
+      },
+      {
+        key: 'zh',
+        title: '中文',
+        flag: '/china.svg',
+      },
+    ],
+    defaultLanguage: 'en',
+  },
 }
-export default config;

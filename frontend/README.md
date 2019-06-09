@@ -1,156 +1,86 @@
-![主页](https://upload-images.jianshu.io/upload_images/12890819-8420689b7238972a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 前言
+<p align="center">
+  <a href="http://github.com/zuiidea/antd-admin">
+    <img alt="antd-admin" height="64" src="./docs/_media/logo.svg">
+  </a>
+</p>
 
-此 blog 项目是基于 react 全家桶 + Ant Design 。
+<h1 align="center">AntD Admin</h1>
 
-## 效果
+<div align="center">
 
-效果图：
+An excellent front-end solution for enterprise applications.
 
-- pc 端
+[![antd](https://img.shields.io/badge/antd-^3.10.0-blue.svg?style=flat-square)](https://github.com/ant-design/ant-design)
+[![umi](https://img.shields.io/badge/umi-^2.2.1-orange.svg?style=flat-square)](https://github.com/umijs/umi)
+[![GitHub issues](https://img.shields.io/github/issues/zuiidea/antd-admin.svg?style=flat-square)](https://github.com/zuiidea/antd-admin/issues)
+[![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+![Travis (.org)](https://img.shields.io/travis/zuiidea/antd-admin.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/zuiidea/antd-admin/pulls)
+[![Gitter](https://img.shields.io/gitter/room/antd-admin/antd-admin.svg)](https://gitter.im/antd-admin/antd-admin)
 
-![首页](https://upload-images.jianshu.io/upload_images/12890819-4fb796cd5ac5282d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+</div>
 
-- 移动端适配
+- Preview - [https://antd-admin.zuiidea.com](https://antd-admin.zuiidea.com)
+- Documentation - [https://doc.antd-admin.zuiidea.com](https://doc.antd-admin.zuiidea.com)
+- FAQ - [https://doc.antd-admin.zuiidea.com/#/faq](https://doc.antd-admin.zuiidea.com/#/faq)
+- ChangeLog - [https://doc.antd-admin.zuiidea.com/#/change-log](https://doc.antd-admin.zuiidea.com/#/change-log)
 
-![mobile.gif](https://upload-images.jianshu.io/upload_images/12890819-f97e98dfa9ac76b8.gif?imageMogr2/auto-orient/strip)
+English | [简体中文](./README-zh_CN.md) 
 
-完整效果请看：[http://biaochenxuying.cn:2019/](http://biaochenxuying.cn:2019/)
+## Features
 
-## 功能描述
+- Internationalization, extracting translation fields from source code, loading language packs on demand
+- Dynamic permissions, different permissions for different menus
+- Elegant and beautiful, Ant Design system
+- Mock data, local data debugging
 
-### 已经实现功能
 
-- [x] 登录
-- [x] 注册
-- [x] 文章列表
-- [x] 标签分类
-- [x] 个人介绍
-- [x] 点赞与评论
-- [x] 留言
-- [x] 时间轴
-- [x] 项目展示
-- [x] 发文（支持 MarkDown 语法）
-- [x] 文章详情展示（支持代码语法高亮）
-- [x] 移动端适配
-- [x] 网站波浪效果(请看 https://biaochenxuying.cn/wave.html)
-- [x] 第三方 github 授权登录
-- [x] 文章归档
-- [x] 文章详情的目录
+## Usage
 
-`因为访问地址 http://biaochenxuying.cn:2019/ 加了端口 2019 ，所以体验线上的授权功能会受限`
+1. Clone project code.
 
-`完整功能请访问 vue + typescript + element-ui 版的 https://biaochenxuying.cn`
-
-### 待实现功能
-
-- [ ] 无
-
-## 前端技术
-
-- react： ^16.8.4
-- antd： ^3.15.0
-- react-router:：^4.3.1
-- webpack： 4.28.3
-- axios：0.18.0
-- redux: ^4.0.1
-- highlight.js： ^9.15.6
-- marked：^0.6.1
-
-## 项目搭建
-
-- 项目是按 antd 推荐的教程来搭建的：[antd 在 create-react-app 中使用](https://ant.design/docs/react/use-with-create-react-app-cn) , 实现了 按需加载组件代码和样式。
-
-## 主要项目结构
-
-```
-- components
-  - article 文章详情
-  - articles 文章列表
-  - comments 评论
-  - loadEnd 加载完成
-  - loading 加载中
-  - login 登录
-  - message 留言
-  - nav 导航
-  - project 项目
-  - register 注册
-  - slider 右边栏（博主 logo 、链接和标签等）
-  - artchive 归档
-  - timeLine 时间轴(历程)
-- router 路由
-- store redux 的状态管理
-- utils 封装的常用的方法
-- views 框架页面
+```bash
+git clone https://github.com/zuiidea/antd-admin.git my-project
+cd my-project
 ```
 
-## 注意点
+2. Installation dependence.
 
-- 关于 页面
-
-对于 关于 的页面，其实是一篇文章来的，根据文章类型 type 来决定的，数据库里面 type 为 3
-的文章，只能有一篇就是 博主介绍 ；达到了想什么时候修改内容都可以。
-
-所以当 this.props.location.pathname === '/about' 时就是请求类型为 博主介绍 的文章。
-
-```
-type: 3, // 文章类型: 1：普通文章；2：是博主简历；3 ：是博主简介；
+```bash
+yarn install
 ```
 
-## Build Setup ( 建立安装 )
+Or
 
-```
-# install dependencies
+```bash
 npm install
-
-# serve with hot reload at localhost: 3000
-npm start 或者 yarn start
-
-# build for production with minification
-npm run build 或者 yarn run build
 ```
 
-如果要看完整的效果，是要和后台项目 **[blog-node](https://github.com/biaochenxuying/blog-node)** 一起运行才行的，不然接口请求会失败。
+3. Start local server.
 
-虽然引入了 mock 了，但是还没有时间做模拟数据，想看具体效果，请稳步到我的网站上查看 [http://biaochenxuying.cn:2019](http://biaochenxuying.cn:2019)
+```bash
+npm run start
+```
 
-## 项目地址与文档教程
+4. After the startup is complete, open a browser and visit [http://localhost:7000](http://localhost:7000), If you need to change the startup port, you can configure it in the `.env` file.
 
-其他具体的业务代码，都是些常会见到的需求，这里就不展开讲了。
 
-**项目地址：**
+> More instructions at [documentation](https://doc.antd-admin.zuiidea.com)。
 
-> [前台展示: https://github.com/biaochenxuying/blog-react](https://github.com/biaochenxuying/blog-react)
 
-> [前台展示: https://github.com/biaochenxuying/blog-vue-typescript](https://github.com/biaochenxuying/blog-vue-typescript)
+## Browsers support
 
-> [管理后台：https://github.com/biaochenxuying/blog-react-admin](https://github.com/biaochenxuying/blog-react-admin)
+Modern browsers.
 
-> [后端：https://github.com/biaochenxuying/blog-node](https://github.com/biaochenxuying/blog-node)
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
+| --------- | --------- | --------- | --------- | --------- | 
+|IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
-> [blog：https://github.com/biaochenxuying/blog](https://github.com/biaochenxuying/blog)
+## Contributing
 
-**本博客系统的系列文章：**
+We very much welcome your contribution, you can build together with us in the following ways :smiley: 
 
-- 1. [react + node + express + ant + mongodb 的简洁兼时尚的博客网站](https://biaochenxuying.cn/articleDetail?article_id=5bf57a8f85e0f13af26e579b)
-- 2. [react + Ant Design + 支持 markdown 的 blog-react 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf6bb5e85e0f13af26e57b7)
-- 3. [基于 node + express + mongodb 的 blog-node 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf8c57185e0f13af26e7d0d)
-- 4. [服务器小白的我,是如何将 node+mongodb 项目部署在服务器上并进行性能优化的](https://biaochenxuying.cn/articleDetail?article_id=5bfa728bb54f044b4f9da240)
-- 5. [github 授权登录教程与如何设计第三方授权登录的用户表](https://biaochenxuying.cn/articleDetail?article_id=5c7bd34e42b55e2ecc90976d)
-- 6. [一次网站的性能优化之路 -- 天下武功，唯快不破](https://biaochenxuying.cn/articleDetail?article_id=5c8ca2d3b87b8a04f1860c9a)
-- 7. [Vue + TypeScript + Element 搭建简洁时尚的博客网站及踩坑记](https://biaochenxuying.cn/articleDetail?article_id=5c9d8ce5f181945ddd6b0ffc)
-
-## 最后
-
-如果您觉得本项目和文章不错或者对你有所帮助，请给个星吧，你的肯定就是我继续创作的最大动力。
-
-鉴于问问题的人有点多，笔者时间有限，处理不过来，大家可以加入 QQ 群：**186045338**，加群暗号：**全栈修炼** ，一起相互交流学习。
-
-对 **全栈修炼** 有兴趣的朋友可以扫下方二维码关注我的公众号
- 
-我会不定期更新有价值的内容，长期运营。
-
-关注公众号并回复 **福利** 可领取免费学习资料，福利详情请猛戳：  [Python、Java、Linux、Go、node、vue、react、javaScript](https://biaochenxuying.cn/articleDetail?article_id=5bf4ba3c245730373274df61)
-
-![全栈修炼](https://upload-images.jianshu.io/upload_images/12890819-bce9560fec5c49ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- Use Ant Design Pro in your daily work.
+- Submit [GitHub issues](http://github.com/zuiidea/antd-admin/issues)s to report bugs or ask questions.
+- Propose [Pull Request](http://github.com/zuiidea/antd-admin/pulls) to improve our code.
