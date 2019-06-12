@@ -66,37 +66,35 @@ class NotificationList extends Component {
                 className={classes.subtitle}
                 variant="body2"
               >
-                {notifications.length} new notifications
+                No new notifications
               </Typography>
             </div>
             <div className={classes.content}>
               <List component="div">
-                {notifications.map(notification => (
-                  <Link
-                    key={notification.id}
-                    to="#"
+                <Link
+                  key={1}
+                  to="#"
+                >
+                  <ListItem
+                    className={classes.listItem}
+                    component="div"
+                    onClick={onSelect}
                   >
-                    <ListItem
-                      className={classes.listItem}
-                      component="div"
-                      onClick={onSelect}
+                    <ListItemIcon
+                      className={classes.listItemIcon}
+                      style={{ color: '#fff' }}
                     >
-                      <ListItemIcon
-                        className={classes.listItemIcon}
-                        style={{ color: icons[notification.type].color }}
-                      >
-                        {icons[notification.type].icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        classes={{ secondary: classes.listItemTextSecondary }}
-                        primary={notification.title}
-                        secondary={notification.when}
-                      />
-                      <ArrowForwardIosIcon className={classes.arrowForward} />
-                    </ListItem>
-                    <Divider />
-                  </Link>
-                ))}
+                      test
+                    </ListItemIcon>
+                    <ListItemText
+                      classes={{ secondary: classes.listItemTextSecondary }}
+                      primary={'test'}
+                      secondary={'test'}
+                    />
+                    <ArrowForwardIosIcon className={classes.arrowForward} />
+                  </ListItem>
+                  <Divider />
+                </Link>
               </List>
               <div className={classes.footer}>
                 <Button
@@ -106,7 +104,7 @@ class NotificationList extends Component {
                   to="#"
                   variant="contained"
                 >
-                  See all
+                  Test
                 </Button>
               </div>
             </div>

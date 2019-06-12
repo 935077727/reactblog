@@ -134,12 +134,6 @@ class Topbar extends Component {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              className={classes.signOutButton}
-              onClick={this.handleSignOut}
-            >
-              <InputIcon />
-            </IconButton>
           </Toolbar>
         </div>
         <Popover
@@ -175,7 +169,7 @@ Topbar.propTypes = {
 };
 
 Topbar.defaultProps = {
-  onToggleSidebar: () => {}
+  onToggleSidebar: () => { }
 };
 
 export default compose(

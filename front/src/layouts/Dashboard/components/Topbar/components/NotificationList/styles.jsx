@@ -5,7 +5,7 @@ export default theme => ({
   },
   header: {
     backgroundColor: theme.palette.background.default,
-    backgroundImage: 'url("/images/connected_world.svg")',
+    backgroundImage: 'url("/images/products/xiaobabig.jpg")',
     backgroundPositionX: 'right',
     backgroundPositionY: 'center',
     backgroundRepeat: 'no-repeat',

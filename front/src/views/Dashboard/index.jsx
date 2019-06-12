@@ -39,7 +39,7 @@ class Dashboard extends Component {
     const { classes } = this.props;
 
     return (
-      <DashboardLayout title="Dashboard">
+      <DashboardLayout title="小八">
         <div className={classes.root}>
           <Grid
             container
@@ -51,71 +51,24 @@ class Dashboard extends Component {
               sm={6}
               xl={3}
               xs={12}
+
             >
-              <Budget className={classes.item} />
+              <div style={{height:'200px'}}>
+                <img src="/images/products/xiaobabig.jpg"  style={{height:'inherit'}}/>
+              </div>
             </Grid>
+
             <Grid
               item
               lg={3}
               sm={6}
               xl={3}
               xs={12}
+
             >
-              <Users className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={3}
-              sm={6}
-              xl={3}
-              xs={12}
-            >
-              <Progress className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={3}
-              sm={6}
-              xl={3}
-              xs={12}
-            >
-              <Profit className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={8}
-              md={12}
-              xl={9}
-              xs={12}
-            >
-              <SalesChart className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={4}
-              md={6}
-              xl={3}
-              xs={12}
-            >
-              <DevicesChart className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={4}
-              md={6}
-              xl={3}
-              xs={12}
-            >
-              <ProductList className={classes.item} />
-            </Grid>
-            <Grid
-              item
-              lg={8}
-              md={12}
-              xl={9}
-              xs={12}
-            >
-              <OrdersTable className={classes.item} />
+              <div style={{height:'200px'}}>
+                <img src="/images/products/xiaobabig.jpg"  style={{height:'inherit'}}/>
+              </div>
             </Grid>
           </Grid>
         </div>
