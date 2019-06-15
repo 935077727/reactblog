@@ -35,3 +35,6 @@ functions/*
 # screenshot
 screenshot
 .firebase
+
+build.sh
+build.zip
